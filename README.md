@@ -4,18 +4,20 @@
 Suppose that there are two points on the Earth's surface, $\overline{A}\left(\varphi_1, L_1\right)$ and $\overline{B}\left(\varphi_2, L_2\right)$, each of which is defined by certain latitude ($\varphi$) and longitude ($L$) coordinates, then the distance $D$ between these points can be determined using the inverse method of Vincenty.
 	
 Introduce the following notation:
-	\begin{align}
-		&$a$ --- equatorial radius of the Earth model,\\
-		& $f$ is the flattening factor of the Earth model,\\
-		& $b = a\left(1-f\right)$ is the polar radius of the Earth model,\\
-		& $\alpha\_1,\,\alpha\_2$ --- direct azimuths in points,\\
+$
+\begin{align}
+		&$a$ \text{is equatorial radius of the Earth model},\\
+		& $f$ \text{is the flattening factor of the Earth model},\\
+		& $b = a\left(1-f\right)$ \text{is the polar radius of the Earth model},\\
+		& $\alpha\_1,\,\alpha\_2$ — \text{direct azimuths in points},\\
 		& $U\_1 =\arctan{\left(\left(1-f\right)\tan\varphi\_{1}\right)}$,\\
 		& $U\_2 =\arctan{\left(\left(1-f\right)\tan\varphi\_{2}\right)}$,\\
 		& $L =L\_2-L\_1$,\\
-		& $\varepsilon\_\lambda = 10^{-12}$ --- the permissible error.
+		& $\varepsilon\_\lambda = 10^{-12}$ — the permissible error.
 	\end{align}
+$
 	
-Set the initial value of $\lambda\_k = L,\quad k = 0$, and calculate the following expressions:
+Set the initial value of $\lambda\_k = L, k = 0$, and calculate the following expressions:
 
 $$ \sin \sigma ={\sqrt {\left(\cos U\_{2}\sin \lambda\_k \right)^{2}+\left(\cos U\_{1}\sin U\_{2}-\sin U\_{1}\cos U\_{2}\cos \lambda\_k \right)^{2}}}, $$
 
@@ -32,10 +34,13 @@ $$ C={\frac {1}{16}}f\cos ^{2}\alpha \left[4+f\left(4-3\cos ^{2}\alpha \right)\r
 $$ \lambda\_{k+1} =L+(1-C)f\sin \alpha \left\{\sigma +C\sin \sigma \left[\cos \left(2\sigma \_{\text{m}}\right)+C\cos \sigma \left(-1+2\cos ^{2}\left(2\sigma \_{\text{m}}\right)\right)\right]\right\} $$
 
 The iterative calculation continues until the end condition is met:
+
 $$ \left|\lambda\_{k+1}-\lambda\_{k}\right|\leq\varepsilon\_\lambda, $$
+
 or until the limit on iterations is reached.
 
 The geodetic distance and azimuths are then calculated:
+
 $$ u^2 = \frac{a^2 - b^2}{b^2} \cos^2 \alpha, $$
 
 $$ 	A = 1 + \frac{u^2}{16384} \left\{ 4096 + u^2 \left[ -768 +u^2 (320 - 175u^2) \right] \right\}, $$
