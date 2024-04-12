@@ -1,4 +1,5 @@
 # Inverse Vincenty's method
+It should be said that I have not considered special cases such as two nearly antipodal points, etc.
 
 ## Algorithm
 Suppose that there are two points on the Earth's surface, $\overline{A}\left(\varphi_1, L_1\right)$ and $\overline{B}\left(\varphi_2, L_2\right)$, each of which is defined by certain latitude ($\varphi$) and longitude ($L$) coordinates, then the distance $D$ between these points can be determined using the inverse Vincenty's method.
@@ -27,7 +28,7 @@ $$ \cos \left(2\sigma \_{\text{m}}\right)=\cos \sigma -{\frac {2\sin U\_{1}\sin 
 
 $$ C={\frac {1}{16}}f\cos ^{2}\alpha \left[4+f\left(4-3\cos ^{2}\alpha \right)\right], $$
 
-$$ \lambda\_{k+1} =L+(1-C)f\sin \alpha \left\\{\sigma +C\sin \sigma \left[\cos \left(2\sigma \_{\text{m}}\right)+C\cos \sigma \left(-1+2\cos ^{2}\left(2\sigma \_{\text{m}}\right)\right)\right]\right\\} $$
+$$ \lambda\_{k+1} =L+(1-C)f\sin \alpha \left\\{\sigma +C\sin \sigma \left[\cos \left(2\sigma \_{\text{m}}\right)+C\cos \sigma \left(-1+2\cos ^{2}\left(2\sigma \_{\text{m}}\right)\right)\right]\right\\}. $$
 
 The iterative calculation continues until the end condition is met:
 
