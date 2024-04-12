@@ -4,6 +4,7 @@
 Suppose that there are two points on the Earth's surface, $\overline{A}\left(\varphi_1, L_1\right)$ and $\overline{B}\left(\varphi_2, L_2\right)$, each of which is defined by certain latitude ($\varphi$) and longitude ($L$) coordinates, then the distance $D$ between these points can be determined using the inverse method of Vincenty.
 	
 Introduce the following notation:
+$$
 \begin{align}
     &a \text{ is the equatorial radius of the Earth model},\\
     &f \text{ is the flattening factor of the Earth model},\\
@@ -14,7 +15,7 @@ Introduce the following notation:
     &L = L_2 - L_1,\\
     &\varepsilon_\lambda = 10^{-12} \text{ — the permissible error}.
 \end{align}
-
+$$
 	
 Set the initial value of $\lambda\_k = L, k = 0$, and calculate the following expressions:
 
