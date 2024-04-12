@@ -9,11 +9,11 @@ $
 		&$a$ \text{is equatorial radius of the Earth model},\\
 		& $f$ \text{is the flattening factor of the Earth model},\\
 		& $b = a\left(1-f\right)$ \text{is the polar radius of the Earth model},\\
-		& $\alpha\_1,\,\alpha\_2$ — \text{direct azimuths in points},\\
-		& $U\_1 =\arctan{\left(\left(1-f\right)\tan\varphi\_{1}\right)}$,\\
-		& $U\_2 =\arctan{\left(\left(1-f\right)\tan\varphi\_{2}\right)}$,\\
-		& $L =L\_2-L\_1$,\\
-		& $\varepsilon\_\lambda = 10^{-12}$ — the permissible error.
+		& $\alpha\_1,\,\alpha\_2$ \text{ — direct azimuths in points},\\
+		& U\_1 =\arctan{\left(\left(1-f\right)\tan\varphi\_{1}\right)},\\
+		& U\_2 =\arctan{\left(\left(1-f\right)\tan\varphi\_{2}\right)},\\
+		& L =L\_2-L\_1,\\
+		& $\varepsilon\_\lambda = 10^{-12}$ \text{— the permissible error}.
 	\end{align}
 $
 	
@@ -43,11 +43,11 @@ The geodetic distance and azimuths are then calculated:
 
 $$ u^2 = \frac{a^2 - b^2}{b^2} \cos^2 \alpha, $$
 
-$$ 	A = 1 + \frac{u^2}{16384} \left\{ 4096 + u^2 \left[ -768 +u^2 (320 - 175u^2) \right] \right\}, $$
+$$ 	A = 1 + \frac{u^2}{16384} \left\\{ 4096 + u^2 \left[ -768 +u^2 (320 - 175u^2) \right] \right\\}, $$
 
-$$ B = \frac{u^2}{1024} \left\{ 256 + u^2 \left[ -128 + u^2 (74-47 u^2) \right] \right\}, $$
+$$ B = \frac{u^2}{1024} \left\\{ 256 + u^2 \left[ -128 + u^2 (74-47 u^2) \right] \right\\}, $$
 
-$$ \Delta \sigma = B \sin \sigma \left\{\cos(2 \sigma\_m) + \frac{1}{4}B  \left[\cos \sigma \left(-1+2 \cos^2(2 \sigma\_m)\right) - \frac{1}{6} B \cos(2 \sigma\_m)  (-3+4 \sin^2 \sigma) \left(-3+4 \cos^2 (2 \sigma\_m)\right)\right]\right\}, $$
+$$ \Delta \sigma = B \sin \sigma \left\\{\cos(2 \sigma\_m) + \frac{1}{4}B  \left[\cos \sigma \left(-1+2 \cos^2(2 \sigma\_m)\right) - \frac{1}{6} B \cos(2 \sigma\_m)  (-3+4 \sin^2 \sigma) \left(-3+4 \cos^2 (2 \sigma\_m)\right)\right]\right\\}, $$
 
 $$ D = b A\left(\sigma - \Delta \sigma\right), $$
 
