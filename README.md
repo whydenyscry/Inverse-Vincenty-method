@@ -4,25 +4,31 @@
 Suppose that there are two points on the Earth's surface, $\overline{A}\left(\varphi_1, L_1\right)$ and $\overline{B}\left(\varphi_2, L_2\right)$, each of which is defined by certain latitude ($\varphi$) and longitude ($L$) coordinates, then the distance $D$ between these points can be determined using the inverse method of Vincenty.
 	
 Introduce the following notation:
-	\begin{enumerate}
-		\item $a$ --- equatorial radius of the Earth model,
-		\item $f$ is the flattening factor of the Earth model,
-		\item $b = a\left(1-f\right)$ is the polar radius of the Earth model,
-		\item $\alpha\_1,\,\alpha\_2$ --- direct azimuths in points,
-		\item $U\_1 =\arctan{\left(\left(1-f\right)\tan\varphi\_{1}\right)}$,
-		\item $U\_2 =\arctan{\left(\left(1-f\right)\tan\varphi\_{2}\right)}$,
-		\item $L =L\_2-L\_1$,
-		\item $\varepsilon\_\lambda = 10^{-12}$ --- the permissible error.
-	\end{enumerate}
+	\begin{align}
+		&$a$ --- equatorial radius of the Earth model,\\
+		& $f$ is the flattening factor of the Earth model,\\
+		& $b = a\left(1-f\right)$ is the polar radius of the Earth model,\\
+		& $\alpha\_1,\,\alpha\_2$ --- direct azimuths in points,\\
+		& $U\_1 =\arctan{\left(\left(1-f\right)\tan\varphi\_{1}\right)}$,\\
+		& $U\_2 =\arctan{\left(\left(1-f\right)\tan\varphi\_{2}\right)}$,\\
+		& $L =L\_2-L\_1$,\\
+		& $\varepsilon\_\lambda = 10^{-12}$ --- the permissible error.
+	\end{align}
 	
 Set the initial value of $\lambda\_k = L,\quad k = 0$, and calculate the following expressions:
 
 $$ \sin \sigma ={\sqrt {\left(\cos U\_{2}\sin \lambda\_k \right)^{2}+\left(\cos U\_{1}\sin U\_{2}-\sin U\_{1}\cos U\_{2}\cos \lambda\_k \right)^{2}}}, $$
+
 $$ \cos \sigma =\sin U\_{1}\sin U\_{2}+\cos U\_{1}\cos U\_{2}\cos \lambda\_k, $$
+
 $$ 	\sigma =\text {arctan2} \left(\sin \sigma ,\cos \sigma \right), $$
+
 $$ \sin \alpha ={\frac {\cos U\_{1}\cos U\_{2}\sin \lambda\_k }{\sin \sigma }}, $$
+
 $$ \cos \left(2\sigma \_{\text{m}}\right)=\cos \sigma -{\frac {2\sin U\_{1}\sin U\_{2}}{1-\sin ^{2}\alpha }}, $$
+
 $$ C={\frac {1}{16}}f\cos ^{2}\alpha \left[4+f\left(4-3\cos ^{2}\alpha \right)\right], $$
+
 $$ \lambda\_{k+1} =L+(1-C)f\sin \alpha \left\{\sigma +C\sin \sigma \left[\cos \left(2\sigma \_{\text{m}}\right)+C\cos \sigma \left(-1+2\cos ^{2}\left(2\sigma \_{\text{m}}\right)\right)\right]\right\} $$
 
 The iterative calculation continues until the end condition is met:
