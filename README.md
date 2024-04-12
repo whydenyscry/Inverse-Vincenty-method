@@ -1,22 +1,17 @@
 # Inverse Vincenty's method
 
 ## Algorithm
-Suppose that there are two points on the Earth's surface, $\overline{A}\left(\varphi_1, L_1\right)$ and $\overline{B}\left(\varphi_2, L_2\right)$, each of which is defined by certain latitude ($\varphi$) and longitude ($L$) coordinates, then the distance $D$ between these points can be determined using the inverse method of Vincenty.
+Suppose that there are two points on the Earth's surface, $\overline{A}\left(\varphi_1, L_1\right)$ and $\overline{B}\left(\varphi_2, L_2\right)$, each of which is defined by certain latitude ($\varphi$) and longitude ($L$) coordinates, then the distance $D$ between these points can be determined using the inverse Vincenty's method.
 	
-Introduce the following notation:
-
-$$
-\begin{align}
-    &a \text{ is the equatorial radius of the Earth model},\\
-    &f \text{ is the flattening factor of the Earth model},\\
-    &b = a\left(1 - f\right) \text{ is the polar radius of the Earth model},\\
-    &\alpha_1,\,\alpha_2 \text{ — direct azimuths in points},\\
-    &U_1 = \arctan{\left(\left(1 - f\right)\tan{\varphi_1}\right)},\\
-    &U_2 = \arctan{\left(\left(1 - f\right)\tan{\varphi_2}\right)},\\
-    &L = L_2 - L_1,\\
-    &\varepsilon_\lambda = 10^{-12} \text{ — the permissible error}.
-\end{align}
-$$
+Introduce the following notation:\
+$a$ is the equatorial radius of the Earth model,\
+$f$ is the flattening factor of the Earth model,\
+$b$ is the polar radius of the Earth model,\
+$\alpha_1,\alpha_2$ — direct azimuths in points,\
+$U_1 = \arctan{\left(\left(1 - f\right)\tan{\varphi_1}\right)}$,\
+$U_2 = \arctan{\left(\left(1 - f\right)\tan{\varphi_2}\right)}$,\
+$L = L_2 - L_1$,\
+$\varepsilon_\lambda$ — the permissible error.
 	
 Set the initial value of $\lambda\_k = L, k = 0$, and calculate the following expressions:
 
