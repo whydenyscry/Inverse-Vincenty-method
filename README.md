@@ -4,6 +4,7 @@
 Suppose that there are two points on the Earth's surface, $\overline{A}\left(\varphi_1, L_1\right)$ and $\overline{B}\left(\varphi_2, L_2\right)$, each of which is defined by certain latitude ($\varphi$) and longitude ($L$) coordinates, then the distance $D$ between these points can be determined using the inverse method of Vincenty.
 	
 Introduce the following notation:
+
 $$
 \begin{align}
     &a \text{ is the equatorial radius of the Earth model},\\
