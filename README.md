@@ -1,4 +1,5 @@
 # Inverse Vincenty's method
+Solving the inverse problem of geodesy on the WGS-84 Earth model. 
 It should be said that I have not considered special cases such as two nearly antipodal points, etc.
 
 ## Algorithm
@@ -52,6 +53,15 @@ $$ \alpha \_{1}=\text {arctan2} \left(\cos U\_{2}\sin \lambda\_{k+1} ,\cos U\_{1
 
 $$ \alpha \_{2}=\text {arctan2} \left(\cos U\_{1}\sin \lambda\_{k+1} ,\cos U\_{1}\sin U\_{2}\cos \lambda\_{k+1} -\sin U\_{1}\cos U\_{2}\right). $$
 
+Vincenty then proposed a more compact formula for $A$ ta $B$ using the Helmert parameter:
+
+$$ F = \frac { \sqrt {(1 + u^2)} - 1}{ \sqrt {(1 + u^2)} + 1},$$
+
+$$ A = \frac {1 + \frac {1}{4} F^2}{1 - F}, $$
+
+$$ B = F\left(1 - \frac {3}{8}F^2\right).$$
+
 ## References
 1. T. Vincenty. DIRECT AND INVERSE SOLUTIONS OF GEODESICS ON THE ELLIPSOID WITH APPLICATION OF NESTED EQUATIONS. Survey Review, 23(176):88–93, 4 1975. https://doi.org/10.1179/sre.1975.23.176.88
-2. International Civil Aviation Organization. World Geodetic System – 1984 (WGS-84) manual, 2002. https://www.icao.int/NACC/Documents/Meetings/2014/ECARAIM/REF08-Doc9674.pdf
+2. T. Vincenty. GEODETIC INVERSE SOLUTION BETWEEN ANTIPODAL POINTS. DMAAC Geodetic Survey Squadron. 1975. https://doi:10.5281/zenodo.32999
+3. International Civil Aviation Organization. World Geodetic System – 1984 (WGS-84) manual, 2002. https://www.icao.int/NACC/Documents/Meetings/2014/ECARAIM/REF08-Doc9674.pdf
